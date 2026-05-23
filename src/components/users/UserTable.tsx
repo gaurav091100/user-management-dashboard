@@ -68,13 +68,13 @@ const UserTable: React.FC<UserTableProps> = ({
         <div className="flex gap-2">
           <Link
             to={`/users/${user.id}`}
-            className="px-3 py-1 border border-blue-800 text-blue-800 rounded-full"
+            className="px-3 py-1 border border-blue-800 text-blue-800 dark:border-gray-50 dark:text-gray-50 rounded-full"
           >
             View
           </Link>
           <button
             onClick={() => onEdit(user)}
-            className="px-3 py-1 border border-gray-800 text-gray-800 rounded-full"
+            className="px-3 py-1 border border-gray-800 text-gray-800 dark:border-gray-50 dark:text-gray-50 rounded-full"
           >
             Edit
           </button>

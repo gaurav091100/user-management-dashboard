@@ -1,12 +1,12 @@
 const UserDetailsSkeleton = () => {
   return (
-    <div className="min-h-screen bg-gray-50 p-4 md:p-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-800 p-4 md:p-8">
       <div className="max-w-6xl mx-auto space-y-6">
         {/* Back button skeleton */}
         <div className="h-4 w-32 animate-pulse rounded bg-gray-200" />
 
         {/* Profile card skeleton */}
-        <div className="rounded-2xl border bg-white p-6 shadow-sm">
+        <div className="rounded-2xl border bg-white dark:bg-gray-700 p-6 shadow-sm">
           <div className="flex flex-col gap-6 md:flex-row md:items-center">
             {/* Avatar */}
             <div className="h-28 w-28 animate-pulse rounded-full bg-gray-200 m-auto lg:m-0" />
@@ -30,11 +30,11 @@ const UserDetailsSkeleton = () => {
         </div>
 
         {/* Section cards skeleton */}
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {[1, 2, 3].map((item) => (
             <div
               key={item}
-              className="rounded-2xl border bg-white p-6 shadow-sm"
+              className="rounded-2xl border bg-white dark:bg-gray-700 p-6 shadow-sm"
             >
               <div className="mb-6 h-6 w-48 animate-pulse rounded bg-gray-200" />
 

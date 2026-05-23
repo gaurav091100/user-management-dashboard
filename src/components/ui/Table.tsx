@@ -20,14 +20,14 @@ const Table = <T extends { id?: string | number }>({
   loading = false,
 }: TableProps<T>) => {
   return (
-    <div className="w-full overflow-x-auto rounded-xl border bg-white min-h-[400px]">
+    <div className="w-full overflow-x-auto rounded-xl border dark:border-gray-700 bg-white dark:bg-gray-700 min-h-[400px]">
       <table className="min-w-full border-collapse">
-        <thead className="bg-gray-100">
+        <thead className="bg-gray-100 dark:bg-gray-800">
           <tr>
             {columns.map((column) => (
               <th
                 key={String(column.key)}
-                className="p-2 lg:p-4 text-left text-xs lg:text-sm font-semibold text-gray-700 whitespace-nowrap"
+                className="p-2 lg:p-4 text-left text-xs lg:text-sm font-semibold text-gray-700 dark:text-gray-50 whitespace-nowrap"
               >
                 {column.title}
               </th>
@@ -38,7 +38,7 @@ const Table = <T extends { id?: string | number }>({
         <tbody>
           {loading ? (
             [...Array(10)].map((_, index) => (
-              <tr key={index} className="border-t">
+              <tr key={index} className="border-t dark:border-t-gray-500">
                 {columns.map((column) => (
                   <td key={String(column.key)} className="p-2 lg:p-4">
                     <div className="h-4 w-full animate-pulse rounded bg-gray-200" />
@@ -50,12 +50,12 @@ const Table = <T extends { id?: string | number }>({
             data.map((row, rowIndex) => (
               <tr
                 key={row.id || rowIndex}
-                className="border-t hover:bg-gray-50 transition"
+                className="border-t dark:border-t-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition"
               >
                 {columns.map((column) => (
                   <td
                     key={String(column.key)}
-                    className="p-2 lg:p-4 text-xs lg:text-sm text-gray-700 whitespace-nowrap"
+                    className="p-2 lg:p-4 text-xs lg:text-sm text-gray-700 dark:text-gray-50 whitespace-nowrap"
                   >
                     {column.render
                       ? column.render(row)

@@ -20,20 +20,20 @@ const UserFilters = ({
   onSortChange,
 }: UserFiltersProps) => {
   return (
-    <div className="bg-white rounded-2xl shadow-sm border p-4 mb-6">
+    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border dark:border-gray-700 p-4 mb-6">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <input
           type="text"
           placeholder="Search users..."
           value={search}
           onChange={(e) => onSearch(e.target.value)}
-          className="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-black text-xs lg:text-sm"
+          className="border dark:border-gray-500 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-black text-xs lg:text-sm dark:bg-gray-700"
         />
 
         <select
           value={gender}
           onChange={(e) => onGenderChange(e.target.value)}
-          className="border rounded-lg px-4 py-2 text-xs lg:text-sm"
+          className="border dark:border-gray-500 rounded-lg px-4 py-2 text-xs lg:text-sm dark:bg-gray-700 dark:text-gray-50"
         >
           <option value="all">All Genders</option>
           <option value="male">Male</option>
@@ -43,7 +43,7 @@ const UserFilters = ({
         <select
           value={role}
           onChange={(e) => onRoleChange(e.target.value)}
-          className="border rounded-lg px-4 py-2 text-xs lg:text-sm"
+          className="border dark:border-gray-500 rounded-lg px-4 py-2 text-xs lg:text-sm dark:bg-gray-700 dark:text-gray-50"
         >
           <option value="all">All Roles</option>
           <option value="admin">Admin</option>
@@ -54,7 +54,7 @@ const UserFilters = ({
         <select
           value={sort}
           onChange={(e) => onSortChange(e.target.value)}
-          className="border rounded-lg px-4 py-2  text-xs lg:text-sm"
+          className="border dark:border-gray-500 rounded-lg px-4 py-2  text-xs lg:text-sm dark:bg-gray-700 dark:text-gray-50"
         >
           <option value="">Sort By</option>
           <option value="name-asc">Name A-Z</option>

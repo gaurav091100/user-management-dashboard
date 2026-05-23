@@ -5,6 +5,7 @@ import UserInfoCard from "../components/users/UserInfoCard";
 import UserInfoItem from "../components/users/UserInfoItem";
 import UserProfileCard from "../components/users/UserProfileCard";
 import type { User } from "../types/user";
+import { MoveLeft } from "lucide-react";
 
 const UserDetailsPage = () => {
   const { id } = useParams();
@@ -25,13 +26,13 @@ const UserDetailsPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 md:p-8">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-800 p-4 md:p-8">
       <div className="max-w-6xl mx-auto space-y-6">
         <button
           onClick={() => navigate(-1)}
-          className="text-xs lg:text-sm font-medium text-blue-600 hover:underline"
+          className="flex items-center gap-2 text-xs lg:text-sm font-medium text-blue-600 dark:text-gray-50 hover:underline"
         >
-          ← Back to Users
+          <MoveLeft /> Back to Users
         </button>
         <UserProfileCard user={user as User} />
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

@@ -7,34 +7,34 @@ interface UserProfileCardProps {
 }
 const UserProfileCard = ({ user }: UserProfileCardProps) => {
   return (
-    <div className="bg-white rounded-2xl shadow-sm border p-6">
+    <div className="bg-white dark:bg-gray-700 rounded-2xl shadow-sm border dark:border-gray-700 p-6">
       <div className="flex flex-col md:flex-row md:items-center gap-6">
         <img
           src={user.image}
           alt={user.firstName}
-          className="w-28 h-28 rounded-full object-cover border m-auto lg:m-0"
+          className="w-28 h-28 rounded-full object-cover border dark:border-gray-400 m-auto lg:m-0"
         />
 
         <div className="flex-1">
           <div className="flex flex-col md:flex-row md:items-center gap-3">
-            <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">
+            <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-gray-50">
               {user.firstName} {user.lastName}
             </h1>
 
             <Chip label={user.role} variant={getRoleChipVariant(user.role)} />
           </div>
 
-          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-600 text-xs lg:text-sm">
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-600 dark:text-gray-50 text-xs lg:text-sm">
             <a
               href={`mailto:${user.email}`}
-              className="text-blue-600 hover:underline"
+              className="text-blue-600 hover:underline dark:text-gray-50"
             >
               {user.email}
             </a>
 
             <a
               href={`tel:${user.phone}`}
-              className="text-blue-600 hover:underline"
+              className="text-blue-600 hover:underline dark:text-gray-50"
             >
               {user.phone}
             </a>

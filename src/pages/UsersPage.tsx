@@ -8,6 +8,7 @@ import type { User } from "../types/user";
 import type { UserFormValues } from "../types/user";
 import UserFormModal from "../components/users/UserFormModal";
 import { mapUserToFormValues } from "../utils/userMapper";
+
 const UsersPage = () => {
   const [deleteUserId, setDeleteUserId] = useState<number | null>(null);
   const [editUserId, setEditUserId] = useState<number | null>(null);
@@ -57,15 +58,15 @@ const UsersPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 md:p-6">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-800 p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
           <div>
-            <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">
-              User Management Dashboard
+            <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
+              User Management
             </h1>
 
-            <p className="text-gray-600 mt-1 text-sm lg:text-md">
+            <p className="text-gray-600 dark:text-gray-50  mt-1 text-sm lg:text-md">
               Manage users, roles, and information
             </p>
           </div>
@@ -76,7 +77,7 @@ const UsersPage = () => {
               setEditUser(undefined);
               setOpen(true);
             }}
-            className="bg-black text-white px-5 py-2 rounded-lg hover:opacity-90 text-xs lg:text-sm"
+            className="bg-black dark:bg-white text-white dark:text-black px-5 py-2 rounded-lg hover:opacity-90 text-xs lg:text-sm"
           >
             Add User
           </button>
