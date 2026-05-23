@@ -27,10 +27,10 @@ const Chip: React.FC<ChipProps> = ({
   return (
     <span
       className={`
-        inline-flex items-center
+        inline-block items-center
         px-3 py-1
         rounded-full
-        text-sm font-medium capitalize
+        text-sm font-medium capitalize text-center
         ${variants[variant]}
       `}
     >

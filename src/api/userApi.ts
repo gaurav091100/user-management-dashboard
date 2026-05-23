@@ -58,6 +58,12 @@ export const getUsers = async ({
   return response.data;
 };
 
+export const getUserById = async (id: number) => {
+  const response = await api.get(`/users/${id}`);
+  return response.data;
+};
+
+
 export const addUser = async (payload: UserPayload) => {
   const response = await api.post(`/users/add`, payload);
   return response.data;

@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Table from "../ui/Table";
-import Chip, { type ChipVariant } from "../ui/Chip";
+import Chip from "../ui/Chip";
 import type { User } from "../../types/user";
+import { getRoleChipVariant } from "../../utils/getRoleChipVariant";
 
 
 interface UserTableProps {
@@ -12,18 +13,7 @@ interface UserTableProps {
   onDelete: (id: number) => void;
 }
 
-const getChipVariant = (role: string): ChipVariant => {
-  switch (role?.toLowerCase()) {
-    case "admin":
-      return "success";
-      
-    case "moderator":
-      return "primary";
 
-    default:
-      return "default";
-  }
-};
 
 const UserTable: React.FC<UserTableProps> = ({
   loading,
@@ -67,7 +57,7 @@ const UserTable: React.FC<UserTableProps> = ({
       render: (user: User) => (
         <Chip
           label={user.role}
-          variant={getChipVariant(user.role)}
+          variant={getRoleChipVariant(user.role)}
         />
       ),
     },
@@ -78,19 +68,19 @@ const UserTable: React.FC<UserTableProps> = ({
         <div className="flex gap-2">
           <Link
             to={`/users/${user.id}`}
-            className="px-3 py-1 rounded bg-blue-500 text-white"
+            className="px-3 py-1 border border-blue-800 text-blue-800 rounded-full"
           >
             View
           </Link>
           <button
             onClick={() => onEdit(user)}
-            className="px-3 py-1 rounded bg-yellow-500 text-white"
+            className="px-3 py-1 border border-gray-800 text-gray-800 rounded-full"
           >
             Edit
           </button>
           <button
             onClick={() => onDelete(user.id)}
-            className="px-3 py-1 rounded bg-red-500 text-white"
+            className="px-3 py-1 bg-red-600 text-white rounded-full"
           >
             Delete
           </button>
