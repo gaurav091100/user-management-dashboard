@@ -3,8 +3,9 @@ import { mapUserPayload } from '../utils/userMapper';
 import { useEffect, useState } from "react";
 import { addUser, deleteUser, getUsers, updateUser } from "../api/userApi";
 import type { User, UsersResponse } from "../types/user";
-import axios from "axios";
 import type { UserFormValues } from "../types/user";
+import { getSortParams } from '../utils/getSortParams';
+import { getErrorMessage } from '../utils/getErrorMessage';
 
 const LIMIT = 10;
 
@@ -29,28 +30,7 @@ const useUsers = () => {
       setIsFetching(true);
       setError("");
 
-      let sortBy = "";
-      let order: "asc" | "desc" = "asc";
-
-      if (sort === "name-asc") {
-        sortBy = "firstName";
-        order = "asc";
-      }
-
-      if (sort === "name-desc") {
-        sortBy = "firstName";
-        order = "desc";
-      }
-
-      if (sort === "age-asc") {
-        sortBy = "age";
-        order = "asc";
-      }
-
-      if (sort === "age-desc") {
-        sortBy = "age";
-        order = "desc";
-      }
+      const { sortBy, order } = getSortParams(sort);
 
       const response:UsersResponse = await getUsers({
         limit: LIMIT,
@@ -65,15 +45,7 @@ const useUsers = () => {
       setUsers(response.users);
       setTotal(response.total);
     } catch (error) {
-      if (axios.isAxiosError(error)) {
-        setError(
-          error.response?.data?.message ||
-            error.message ||
-            "Failed to fetch users",
-        );
-      } else {
-        setError("Unexpected error occurred");
-      }
+        setError(getErrorMessage(error));    
     } finally {
       setIsFetching(false);
     }
@@ -92,15 +64,7 @@ const useUsers = () => {
 
   setUsers((prev) => [newUser, ...prev]);
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      alert(
-        error.response?.data?.message ||
-          error.message ||
-          "Failed to add user"
-      );
-    } else {
-      alert("Unexpected error occurred");
-    }
+      alert(getErrorMessage(error));
   } finally {
     setIsAdding(false);
   }
@@ -116,15 +80,7 @@ const handleUpdateUser = async (id: number, formData: UserFormValues) => {
       prev.map((user) => (user.id === id ? updatedUser : user)),
     );
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      alert(
-        error.response?.data?.message ||
-          error.message ||
-          "Failed to update user"
-      );
-    } else {
-      alert("Unexpected error occurred");
-    }
+    alert(getErrorMessage(error));
   } finally {
     setIsUpdating(false);
   }
@@ -137,15 +93,7 @@ const handleUpdateUser = async (id: number, formData: UserFormValues) => {
 
       setUsers((prev) => prev.filter((user) => user.id !== id));
     } catch (error) {
-      if (axios.isAxiosError(error)) {
-        alert(
-          error.response?.data?.message ||
-            error.message ||
-            "Failed to delete user",
-        );
-      } else {
-        alert("Unexpected error occurred");
-      }
+      alert(getErrorMessage(error));
     } finally{
       setIsDeleting(false)
     }
