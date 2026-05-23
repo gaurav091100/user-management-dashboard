@@ -1,4 +1,5 @@
 import axios from "axios";
+import type { UserPayload } from "../types/user";
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL,
@@ -54,6 +55,23 @@ export const getUsers = async ({
     endpoint.includes("?") ? "&" : "?"
   }${params.toString()}`
 );
+  return response.data;
+};
+
+export const addUser = async (payload: UserPayload) => {
+  const response = await api.post(`/users/add`, payload);
+  return response.data;
+};
+
+export const updateUser = async (
+  id: number,
+  payload: UserPayload
+) => {
+  const response = await api.put(
+    `/users/${id}`,
+    payload
+  );
+
   return response.data;
 };
 

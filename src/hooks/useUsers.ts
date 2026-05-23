@@ -1,14 +1,18 @@
 /* eslint-disable react-hooks/set-state-in-effect */
+import { mapUserPayload } from '../utils/userMapper';
 import { useEffect, useState } from "react";
-import { deleteUser, getUsers } from "../api/userApi";
+import { addUser, deleteUser, getUsers, updateUser } from "../api/userApi";
 import type { User, UsersResponse } from "../types/user";
 import axios from "axios";
+import type { UserFormValues } from "../types/user";
 
 const LIMIT = 10;
 
 const useUsers = () => {
   const [users, setUsers] = useState<User[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [isFetching, setIsFetching] = useState<boolean>(false);
+  const [isAdding, setIsAdding] = useState<boolean>(false);
+  const [isUpdating, setIsUpdating] = useState<boolean>(false);
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
   const [search, setSearch] = useState<string>("");
@@ -22,7 +26,7 @@ const useUsers = () => {
 
   const fetchUsers = async () => {
     try {
-      setLoading(true);
+      setIsFetching(true);
       setError("");
 
       let sortBy = "";
@@ -71,7 +75,7 @@ const useUsers = () => {
         setError("Unexpected error occurred");
       }
     } finally {
-      setLoading(false);
+      setIsFetching(false);
     }
   };
 
@@ -79,6 +83,52 @@ const useUsers = () => {
     setPage(1);
     setSearch(value);
   };
+
+  const handleCreateUser = async (formData: UserFormValues) => {
+  try {
+    setIsAdding(true);
+    const payload = mapUserPayload(formData);
+    const newUser = await addUser(payload);
+
+  setUsers((prev) => [newUser, ...prev]);
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      alert(
+        error.response?.data?.message ||
+          error.message ||
+          "Failed to add user"
+      );
+    } else {
+      alert("Unexpected error occurred");
+    }
+  } finally {
+    setIsAdding(false);
+  }
+};
+
+const handleUpdateUser = async (id: number, formData: UserFormValues) => {
+  try {
+    setIsUpdating(true);
+    const payload = mapUserPayload(formData);
+    const updatedUser = await updateUser(id, payload);
+
+    setUsers((prev) =>
+      prev.map((user) => (user.id === id ? updatedUser : user)),
+    );
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      alert(
+        error.response?.data?.message ||
+          error.message ||
+          "Failed to update user"
+      );
+    } else {
+      alert("Unexpected error occurred");
+    }
+  } finally {
+    setIsUpdating(false);
+  }
+};
 
   const handleDelete = async (id: number) => {
     try {
@@ -108,7 +158,7 @@ const useUsers = () => {
 
   return {
     users,
-    loading,
+    isFetching,
     error,
     search,
     gender,
@@ -118,6 +168,10 @@ const useUsers = () => {
     setRole,
     setSort,
     handleSearch,
+    isAdding,
+    handleCreateUser,
+    isUpdating,
+    handleUpdateUser,
     isDeleting,
     handleDelete,
     page,

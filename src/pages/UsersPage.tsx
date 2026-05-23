@@ -5,12 +5,18 @@ import UserFilters from "../components/users/UserFilters";
 import UserTable from "../components/users/UserTable";
 import useUsers from "../hooks/useUsers";
 import type { User } from "../types/user";
-
+import type { UserFormValues } from "../types/user";
+import UserFormModal from "../components/users/UserFormModal";
+import { mapUserToFormValues } from "../utils/userMapper";
 const UsersPage = () => {
   const [deleteUserId, setDeleteUserId] = useState<number | null>(null);
+  const [editUserId, setEditUserId] = useState<number | null>(null);
+  const [open, setOpen] = useState(false);
+  const [editUser, setEditUser] = useState<UserFormValues | undefined>();
+  const [mode, setMode] = useState<"create" | "edit">("create");
   const {
     users,
-    loading,
+    isFetching,
     error,
     search,
     gender,
@@ -20,6 +26,10 @@ const UsersPage = () => {
     setRole,
     setSort,
     handleSearch,
+    isAdding,
+    handleCreateUser,
+    isUpdating,
+    handleUpdateUser,
     isDeleting,
     handleDelete,
     page,
@@ -28,7 +38,22 @@ const UsersPage = () => {
   } = useUsers();
 
   const handleEdit = (user: User) => {
-    console.log("Edit user:", user);
+    if (user) {
+      setEditUserId(user.id);
+      setEditUser(mapUserToFormValues(user));
+      setMode("edit");
+      setOpen(true);
+    }
+  };
+
+
+  const handleUserFormSubmit = async (data: UserFormValues) => {
+    if (mode === "create") {
+      await handleCreateUser(data);
+    } else {
+      await handleUpdateUser(editUserId as number, data);
+      setEditUserId(null);
+    }
   };
 
   return (
@@ -45,7 +70,14 @@ const UsersPage = () => {
             </p>
           </div>
 
-          <button className="bg-black text-white px-5 py-2 rounded-lg hover:opacity-90">
+          <button
+            onClick={() => {
+              setMode("create");
+              setEditUser(undefined);
+              setOpen(true);
+            }}
+            className="bg-black text-white px-5 py-2 rounded-lg hover:opacity-90"
+          >
             Add User
           </button>
         </div>
@@ -69,7 +101,7 @@ const UsersPage = () => {
 
         {!error && (
           <UserTable
-            loading={loading}
+            loading={isFetching}
             users={users}
             onEdit={handleEdit}
             onDelete={(id) => setDeleteUserId(id)}
@@ -84,6 +116,18 @@ const UsersPage = () => {
           />
         </div>
       </div>
+      <UserFormModal
+        open={open}
+        mode={mode}
+        isSubmitting={mode === "create" ? isAdding : isUpdating}
+        initialData={editUser}
+        onClose={() => {
+          setOpen(false);
+          setEditUserId(null);
+          setEditUser(undefined);
+        }}
+        onSubmit={(data:UserFormValues) => handleUserFormSubmit(data)}
+      />
       <ConfirmDialog
         open={deleteUserId !== null}
         title="Delete User"

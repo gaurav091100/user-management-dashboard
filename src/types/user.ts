@@ -79,3 +79,43 @@ export interface UsersResponse {
   skip: number;
   limit: number;
 }
+
+export interface UserFormValues {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  age: number | "";
+  gender: string;
+  role: UserRole;
+  image?: string;
+  addressLine: string;
+  city: string;
+  state: string;
+  country: string;
+  companyName: string;
+  department: string;
+  title: string;
+};
+
+export type UserPayload = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  age: number;
+  gender: string;
+  role: string;
+  image?: string;
+  address: {
+    address: string;
+    city: string;
+    state: string;
+    country: string;
+  };
+  company: {
+    name: string;
+    department: string;
+    title: string;
+  };
+};
