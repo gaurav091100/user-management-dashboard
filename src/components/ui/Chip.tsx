@@ -30,7 +30,7 @@ const Chip: React.FC<ChipProps> = ({
         inline-block items-center
         px-3 py-1
         rounded-full
-        text-sm font-medium capitalize text-center
+        text-xs lg:text-sm font-medium capitalize text-center
         ${variants[variant]}
       `}
     >

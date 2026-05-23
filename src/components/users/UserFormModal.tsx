@@ -98,9 +98,9 @@ const UserFormModal: React.FC<Props> = ({
         onSubmit={handleSubmit}
         className="space-y-6 max-h-[75vh] overflow-y-auto pr-2 no-scrollbar scroll-smooth"
       >
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
           <div>
-            <label className="text-xs font-semibold">
+            <label className="text-xs lg:text-sm font-semibold">
               First Name <span className="text-red-500">*</span>
             </label>
             <input
@@ -108,15 +108,15 @@ const UserFormModal: React.FC<Props> = ({
               placeholder="Enter your first name"
               value={form.firstName}
               onChange={handleChange}
-              className="border p-2 rounded w-full"
+              className="border p-2 rounded w-full text-xs lg:text-sm"
             />
             {errors.firstName && (
-              <p className="text-xs text-red-500">{errors.firstName}</p>
+              <p className="text-xs lg:text-sm text-red-500">{errors.firstName}</p>
             )}
           </div>
 
           <div>
-            <label className="text-xs font-semibold">
+            <label className="text-xs lg:text-sm font-semibold">
               Last Name <span className="text-red-500">*</span>
             </label>
             <input
@@ -124,16 +124,16 @@ const UserFormModal: React.FC<Props> = ({
               placeholder="Enter your last name"
               value={form.lastName}
               onChange={handleChange}
-              className="border p-2 rounded w-full"
+              className="border p-2 rounded w-full text-xs lg:text-sm"
             />
             {errors.lastName && (
-              <p className="text-xs text-red-500">{errors.lastName}</p>
+              <p className="text-xs lg:text-sm text-red-500">{errors.lastName}</p>
             )}
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-3 mt-3">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-3">
           <div>
-            <label className="text-xs font-semibold">
+            <label className="text-xs lg:text-sm font-semibold">
               Email <span className="text-red-500">*</span>
             </label>
             <input
@@ -141,15 +141,15 @@ const UserFormModal: React.FC<Props> = ({
               placeholder="Enter your email"
               value={form.email}
               onChange={handleChange}
-              className="border p-2 rounded w-full"
+              className="border p-2 rounded w-full text-xs lg:text-sm"
             />
             {errors.email && (
-              <p className="text-xs text-red-500">{errors.email}</p>
+              <p className="text-xs lg:text-sm text-red-500">{errors.email}</p>
             )}
           </div>
 
           <div>
-            <label className="text-xs font-semibold">
+            <label className="text-xs lg:text-sm font-semibold">
               Phone <span className="text-red-500">*</span>
             </label>
             <input
@@ -157,17 +157,17 @@ const UserFormModal: React.FC<Props> = ({
               placeholder="Enter your phone number"
               value={form.phone}
               onChange={handleChange}
-              className="border p-2 rounded w-full"
+              className="border p-2 rounded w-full text-xs lg:text-sm"
             />
             {errors.phone && (
-              <p className="text-xs text-red-500">{errors.phone}</p>
+              <p className="text-xs lg:text-sm text-red-500">{errors.phone}</p>
             )}
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
           <div>
-            <label className="text-xs font-semibold">
+            <label className="text-xs lg:text-sm font-semibold">
               Age <span className="text-red-500">*</span>
             </label>
             <input
@@ -176,37 +176,37 @@ const UserFormModal: React.FC<Props> = ({
               type="number"
               value={form.age}
               onChange={handleChange}
-              className="border p-2 rounded w-full"
+              className="border p-2 rounded w-full text-xs lg:text-sm"
             />
-            {errors.age && <p className="text-xs text-red-500">{errors.age}</p>}
+            {errors.age && <p className="text-xs lg:text-sm text-red-500">{errors.age}</p>}
           </div>
           <div>
-            <label className="text-xs font-semibold">
+            <label className="text-xs lg:text-sm font-semibold">
               Gender <span className="text-red-500">*</span>
             </label>
             <select
               name="gender"
               value={form.gender}
               onChange={handleChange}
-              className="border p-2 rounded w-full"
+              className="border p-2 rounded w-full text-xs lg:text-sm"
             >
               <option value="">Select</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
             {errors.gender && (
-              <p className="text-xs text-red-500">{errors.gender}</p>
+              <p className="text-xs lg:text-sm text-red-500">{errors.gender}</p>
             )}
           </div>
-          <div>
-            <label className="text-xs font-semibold">
+          <div className="col-span-2 lg:col-span-1">
+            <label className="text-xs lg:text-sm font-semibold">
               Role <span className="text-red-500">*</span>
             </label>
             <select
               name="role"
               value={form.role}
               onChange={handleChange}
-              className="border p-2 rounded w-full"
+              className="border p-2 rounded w-full text-xs lg:text-sm"
             >
               <option value="">Select</option>
               <option value="admin">Admin</option>
@@ -214,23 +214,23 @@ const UserFormModal: React.FC<Props> = ({
               <option value="user">User</option>
             </select>
             {errors.role && (
-              <p className="text-xs text-red-500">{errors.role}</p>
+              <p className="text-xs lg:text-sm text-red-500">{errors.role}</p>
             )}
           </div>       
         </div>
         <div className="mt-3">
-            <label className="text-xs font-semibold">Profile Image URL</label>
+            <label className="text-xs lg:text-sm font-semibold">Profile Image URL</label>
             <input
               name="image"
               placeholder="Enter profile image URL"
               value={form.image}
               onChange={handleChange}
-              className="border p-2 rounded w-full"
+              className="border p-2 rounded w-full text-xs lg:text-sm"
             />
           </div>
 
         <div>
-          <label className="text-xs font-semibold">
+          <label className="text-xs lg:text-sm font-semibold">
             Address Line <span className="text-red-500">*</span>
           </label>
           <input
@@ -238,16 +238,16 @@ const UserFormModal: React.FC<Props> = ({
             placeholder="Enter address line"
             value={form.addressLine}
             onChange={handleChange}
-            className="border p-2 rounded w-full"
+            className="border p-2 rounded w-full text-xs lg:text-sm"
           />
           {errors.addressLine && (
-            <p className="text-xs text-red-500">{errors.addressLine}</p>
+            <p className="text-xs lg:text-sm text-red-500">{errors.addressLine}</p>
           )}
         </div>
 
-        <div className="grid grid-cols-3 gap-3 mt-3">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 mt-3">
           <div>
-            <label className="text-xs font-semibold">
+            <label className="text-xs lg:text-sm font-semibold">
               City <span className="text-red-500">*</span>
             </label>
             <input
@@ -255,14 +255,14 @@ const UserFormModal: React.FC<Props> = ({
               placeholder="Enter your city"
               value={form.city}
               onChange={handleChange}
-              className="border p-2 rounded w-full"
+              className="border p-2 rounded w-full text-xs lg:text-sm"
             />
             {errors.city && (
-              <p className="text-xs text-red-500">{errors.city}</p>
+              <p className="text-xs lg:text-sm text-red-500">{errors.city}</p>
             )}
           </div>
           <div>
-            <label className="text-xs font-semibold">
+            <label className="text-xs lg:text-sm font-semibold">
               State <span className="text-red-500">*</span>
             </label>
             <input
@@ -270,14 +270,14 @@ const UserFormModal: React.FC<Props> = ({
               placeholder="Enter your state"
               value={form.state}
               onChange={handleChange}
-              className="border p-2 rounded w-full"
+              className="border p-2 rounded w-full text-xs lg:text-sm"
             />
             {errors.state && (
-              <p className="text-xs text-red-500">{errors.state}</p>
+              <p className="text-xs lg:text-sm text-red-500">{errors.state}</p>
             )}
           </div>
-          <div>
-            <label className="text-xs font-semibold">
+          <div className="col-span-2 lg:col-span-1">
+            <label className="text-xs lg:text-sm font-semibold">
               Contry <span className="text-red-500">*</span>
             </label>
             <input
@@ -285,16 +285,16 @@ const UserFormModal: React.FC<Props> = ({
               placeholder="Enter your country"
               value={form.country}
               onChange={handleChange}
-              className="border p-2 rounded w-full"
+              className="border p-2 rounded w-full text-xs lg:text-sm"
             />
             {errors.country && (
-              <p className="text-xs text-red-500">{errors.country}</p>
+              <p className="text-xs lg:text-sm text-red-500">{errors.country}</p>
             )}
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
           <div>
-            <label className="text-xs font-semibold">
+            <label className="text-xs lg:text-sm font-semibold">
               Company <span className="text-red-500">*</span>
             </label>
             <input
@@ -302,15 +302,15 @@ const UserFormModal: React.FC<Props> = ({
               placeholder="Enter your company name"
               value={form.companyName}
               onChange={handleChange}
-              className="border p-2 rounded w-full"
+              className="border p-2 rounded w-full text-xs lg:text-sm"
             />
             {errors.companyName && (
-              <p className="text-xs text-red-500">{errors.companyName}</p>
+              <p className="text-xs lg:text-sm text-red-500">{errors.companyName}</p>
             )}
           </div>
 
           <div>
-            <label className="text-xs font-semibold">
+            <label className="text-xs lg:text-sm font-semibold">
               Department <span className="text-red-500">*</span>
             </label>
             <input
@@ -318,16 +318,16 @@ const UserFormModal: React.FC<Props> = ({
               placeholder="Enter your department"
               value={form.department}
               onChange={handleChange}
-              className="border p-2 rounded w-full"
+              className="border p-2 rounded w-full text-xs lg:text-sm"
             />
             {errors.department && (
-              <p className="text-xs text-red-500">{errors.department}</p>
+              <p className="text-xs lg:text-sm text-red-500">{errors.department}</p>
             )}
           </div>
         </div>
 
         <div className="mt-3">
-          <label className="text-xs font-semibold">
+          <label className="text-xs lg:text-sm font-semibold">
             Title <span className="text-red-500">*</span>
           </label>
           <input
@@ -335,16 +335,16 @@ const UserFormModal: React.FC<Props> = ({
             placeholder="Enter title"
             value={form.title}
             onChange={handleChange}
-            className="border p-2 rounded w-full"
+            className="border p-2 rounded w-full text-xs lg:text-sm"
           />
           {errors.title && (
-            <p className="text-xs text-red-500">{errors.title}</p>
+            <p className="text-xs lg:text-sm text-red-500">{errors.title}</p>
           )}
         </div>
         <button
           disabled={isSubmitting}
           type="submit"
-          className="w-full bg-black text-white py-2 rounded-lg hover:opacity-90"
+          className="w-full bg-black text-white py-2 rounded-lg hover:opacity-90 text-xs lg:text-sm"
         >
           {mode === "create" ? "Create User" : "Update User"}
         </button>

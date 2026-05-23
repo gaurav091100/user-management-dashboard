@@ -29,7 +29,7 @@ const UserDetailsPage = () => {
       <div className="max-w-6xl mx-auto space-y-6">
         <button
           onClick={() => navigate(-1)}
-          className="text-sm font-medium text-blue-600 hover:underline"
+          className="text-xs lg:text-sm font-medium text-blue-600 hover:underline"
         >
           ← Back to Users
         </button>

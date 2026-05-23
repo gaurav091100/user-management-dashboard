@@ -27,7 +27,7 @@ const Table = <T extends { id?: string | number }>({
             {columns.map((column) => (
               <th
                 key={String(column.key)}
-                className="p-4 text-left text-sm font-semibold text-gray-700 whitespace-nowrap"
+                className="p-2 lg:p-4 text-left text-xs lg:text-sm font-semibold text-gray-700 whitespace-nowrap"
               >
                 {column.title}
               </th>
@@ -40,7 +40,7 @@ const Table = <T extends { id?: string | number }>({
             [...Array(10)].map((_, index) => (
               <tr key={index} className="border-t">
                 {columns.map((column) => (
-                  <td key={String(column.key)} className="p-4">
+                  <td key={String(column.key)} className="p-2 lg:p-4">
                     <div className="h-4 w-full animate-pulse rounded bg-gray-200" />
                   </td>
                 ))}
@@ -55,7 +55,7 @@ const Table = <T extends { id?: string | number }>({
                 {columns.map((column) => (
                   <td
                     key={String(column.key)}
-                    className="p-4 text-sm text-gray-700 whitespace-nowrap"
+                    className="p-2 lg:p-4 text-xs lg:text-sm text-gray-700 whitespace-nowrap"
                   >
                     {column.render
                       ? column.render(row)

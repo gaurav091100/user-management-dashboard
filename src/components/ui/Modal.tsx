@@ -26,10 +26,10 @@ const Modal: React.FC<ModalProps> = ({
       />
 
       {/* modal box */}
-      <div className="relative w-full max-w-max rounded-2xl bg-white shadow-xl animate-in fade-in zoom-in">
+      <div className="relative w-full max-w-[90%] lg:max-w-max rounded-2xl bg-white shadow-xl animate-in fade-in zoom-in">
         {/* header */}
         <div className="flex items-center justify-between border-b px-5 py-4">
-          <h2 className="text-lg font-semibold text-gray-900">
+          <h2 className="text-md lg:text-lg font-semibold text-gray-900">
             {title}
           </h2>
 

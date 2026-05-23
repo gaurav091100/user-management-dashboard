@@ -9,14 +9,14 @@ const UserDetailsSkeleton = () => {
         <div className="rounded-2xl border bg-white p-6 shadow-sm">
           <div className="flex flex-col gap-6 md:flex-row md:items-center">
             {/* Avatar */}
-            <div className="h-28 w-28 animate-pulse rounded-full bg-gray-200" />
+            <div className="h-28 w-28 animate-pulse rounded-full bg-gray-200 m-auto lg:m-0" />
 
             <div className="flex-1 space-y-4">
               {/* Name */}
               <div className="h-8 w-64 animate-pulse rounded bg-gray-200" />
 
               {/* Badge */}
-              <div className="h-6 w-24 animate-pulse rounded-full bg-gray-200" />
+              <div className="h-6 w-full lg:w-24 animate-pulse rounded-full bg-gray-200" />
 
               {/* Info rows */}
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">

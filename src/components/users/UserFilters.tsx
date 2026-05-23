@@ -27,13 +27,13 @@ const UserFilters = ({
           placeholder="Search users..."
           value={search}
           onChange={(e) => onSearch(e.target.value)}
-          className="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-black"
+          className="border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-black text-xs lg:text-sm"
         />
 
         <select
           value={gender}
           onChange={(e) => onGenderChange(e.target.value)}
-          className="border rounded-lg px-4 py-2"
+          className="border rounded-lg px-4 py-2 text-xs lg:text-sm"
         >
           <option value="all">All Genders</option>
           <option value="male">Male</option>
@@ -43,7 +43,7 @@ const UserFilters = ({
         <select
           value={role}
           onChange={(e) => onRoleChange(e.target.value)}
-          className="border rounded-lg px-4 py-2"
+          className="border rounded-lg px-4 py-2 text-xs lg:text-sm"
         >
           <option value="all">All Roles</option>
           <option value="admin">Admin</option>
@@ -54,7 +54,7 @@ const UserFilters = ({
         <select
           value={sort}
           onChange={(e) => onSortChange(e.target.value)}
-          className="border rounded-lg px-4 py-2"
+          className="border rounded-lg px-4 py-2  text-xs lg:text-sm"
         >
           <option value="">Sort By</option>
           <option value="name-asc">Name A-Z</option>

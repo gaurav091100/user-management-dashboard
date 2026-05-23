@@ -9,9 +9,9 @@ const UserInfoItem = ({
 }: InfoItemProps) => {
   return (
     <div className="border-b pb-3 last:border-none">
-      <p className="text-sm text-gray-500">{label}</p>
+      <p className="text-xs lg:text-sm text-gray-500">{label}</p>
 
-      <p className="font-medium text-gray-900 mt-1">
+      <p className="text-xs lg:text-sm font-medium text-gray-900 mt-1">
         {value}
       </p>
     </div>

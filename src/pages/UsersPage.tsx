@@ -61,11 +61,11 @@ const UsersPage = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">
+            <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">
               User Management Dashboard
             </h1>
 
-            <p className="text-gray-600 mt-1">
+            <p className="text-gray-600 mt-1 text-sm lg:text-md">
               Manage users, roles, and information
             </p>
           </div>
@@ -76,7 +76,7 @@ const UsersPage = () => {
               setEditUser(undefined);
               setOpen(true);
             }}
-            className="bg-black text-white px-5 py-2 rounded-lg hover:opacity-90"
+            className="bg-black text-white px-5 py-2 rounded-lg hover:opacity-90 text-xs lg:text-sm"
           >
             Add User
           </button>

@@ -38,7 +38,7 @@ const Pagination: React.FC<PaginationProps> = ({
   const visiblePages = getVisiblePages();
 
   const baseButton =
-    "min-w-[40px] h-10 px-3 rounded-lg border text-sm font-medium transition-all duration-200";
+    "min-w-[20px] lg:min-w-[40px] h-8 lg:h-10 px-3 rounded-lg border text-xs lg:text-sm font-medium transition-all duration-200";
 
   return (
     <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
