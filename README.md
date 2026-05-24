@@ -4,7 +4,6 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-8.0-646CFF?logo=vite&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?logo=tailwind-css&logoColor=white)
-![License](https://img.shields.io/badge/License-Private-lightgrey)
 
 A modern, responsive admin dashboard for managing users. Built with React and TypeScript, it connects to the [DummyJSON](https://dummyjson.com) Users API to list, search, filter, create, update, and delete users—with a dedicated detail view, dark mode, and polished loading and error states.
 
@@ -33,10 +32,9 @@ A modern, responsive admin dashboard for managing users. Built with React and Ty
 | Language | [TypeScript](https://www.typescriptlang.org/) |
 | Build tool | [Vite](https://vite.dev/) 8 |
 | Routing | [React Router DOM](https://reactrouter.com/) 7 |
-| Styling | [Tailwind CSS](https://tailwindcss.com/) 3 + PostCSS + Autoprefixer |
+| Styling | [Tailwind CSS](https://tailwindcss.com/) 3|
 | HTTP client | [Axios](https://axios-http.com/) |
 | Icons | [Lucide React](https://lucide.dev/) |
-| Linting | ESLint 10 + TypeScript ESLint + React Hooks plugin |
 | API | [DummyJSON](https://dummyjson.com/docs/users) Users API |
 
 ---
@@ -63,10 +61,10 @@ npm install
 
 Create a `.env` file in the project root (see `.env.example`):
 
-### Available Scripts
+### Available Scripts / Run Project
 
 ```bash
-# Development
+# Run development server
 npm run dev
 
 # Production build
