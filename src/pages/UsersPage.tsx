@@ -8,6 +8,7 @@ import type { User } from "../types/user";
 import type { UserFormValues } from "../types/user";
 import UserFormModal from "../components/users/UserFormModal";
 import { mapUserToFormValues } from "../utils/userMapper";
+import ErrorScreen from "../components/common/ErrorScreen";
 
 const UsersPage = () => {
   const [deleteUserId, setDeleteUserId] = useState<number | null>(null);
@@ -83,7 +84,15 @@ const UsersPage = () => {
           </button>
         </div>
 
-        <UserFilters
+        
+
+        {error && (
+          <ErrorScreen errorMessage={error} />
+        )}
+
+        {!error && (
+          <>
+          <UserFilters
           search={search}
           gender={gender}
           role={role}
@@ -93,29 +102,23 @@ const UsersPage = () => {
           onRoleChange={setRole}
           onSortChange={setSort}
         />
-
-        {error && (
-          <div className="bg-red-100 text-red-600 border border-red-200 rounded-xl p-4 mb-4">
-            {error}
-          </div>
-        )}
-
-        {!error && (
           <UserTable
             loading={isFetching}
             users={users}
             onEdit={handleEdit}
             onDelete={(id) => setDeleteUserId(id)}
           />
-        )}
-
-        <div className="flex items-center justify-center mt-6">
+          <div className="flex items-center justify-center mt-6">
           <Pagination
             page={page}
             totalPages={totalPages}
             onPageChange={setPage}
           />
         </div>
+          </>
+        )}
+
+        
       </div>
       <UserFormModal
         open={open}

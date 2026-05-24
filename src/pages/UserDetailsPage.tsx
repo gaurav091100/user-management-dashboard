@@ -6,6 +6,7 @@ import UserInfoItem from "../components/users/UserInfoItem";
 import UserProfileCard from "../components/users/UserProfileCard";
 import type { User } from "../types/user";
 import { MoveLeft } from "lucide-react";
+import ErrorScreen from "../components/common/ErrorScreen";
 
 const UserDetailsPage = () => {
   const { id } = useParams();
@@ -19,9 +20,7 @@ const UserDetailsPage = () => {
 
   if (error) {
     return (
-      <div className="p-6">
-        <p className="text-red-500">{error}</p>
-      </div>
+      <ErrorScreen errorMessage={error} />
     );
   }
 
