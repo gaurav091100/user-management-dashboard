@@ -1,5 +1,3 @@
-<img width="1898" height="899" alt="Screenshot 2026-05-24 165818" src="https://github.com/user-attachments/assets/bffc9ec5-8c13-4a50-9e4e-4d9eece3f6ea" />
-<img width="1901" height="904" alt="Screenshot 2026-05-24 165753" src="https://github.com/user-attachments/assets/54c2df35-963e-4d0d-8b9b-105867d19119" />
 # User Management Dashboard
 
 ![React](https://img.shields.io/badge/React-19.2-61DAFB?logo=react&logoColor=white)
@@ -94,5 +92,17 @@ npm run preview
 
 ## Screenshots
 
+<img width="440" height="794" alt="Screenshot 2026-05-24 170105" src="https://github.com/user-attachments/assets/6dca0f17-78dc-4469-82f1-95c30ca7cd06" />
+<img width="442" height="784" alt="Screenshot 2026-05-24 170042" src="https://github.com/user-attachments/assets/1e6057b9-3296-4931-a98c-58c1175011a7" />
+<img width="434" height="797" alt="Screenshot 2026-05-24 170030" src="https://github.com/user-attachments/assets/4ed7c592-8f4c-48dc-b979-a0e0f5f446f9" />
+<img width="437" height="802" alt="Screenshot 2026-05-24 170012" src="https://github.com/user-attachments/assets/4648a1b0-6fc1-4e24-a831-a87b21ee5038" />
+<img width="1596" height="904" alt="Screenshot 2026-05-24 170145" src="https://github.com/user-attachments/assets/e9324eff-ac03-454d-8bf2-68eec8e35b42" />
+<img width="1891" height="890" alt="Screenshot 2026-05-24 165920" src="https://github.com/user-attachments/assets/cf1e13f2-16fa-43e9-8546-e717d661318b" />
+<img width="1900" height="908" alt="Screenshot 2026-05-24 165910" src="https://github.com/user-attachments/assets/91c3cd0e-06c1-4eac-bf44-2aaca0d3dade" />
+<img width="1892" height="898" alt="Screenshot 2026-05-24 165857" src="https://github.com/user-attachments/assets/8973efd4-42b6-49e5-a178-ad123b585aaf" />
+<img width="1893" height="901" alt="Screenshot 2026-05-24 165839" src="https://github.com/user-attachments/assets/bc5ecb7a-3f75-4d38-8a42-62d941ab9a5a" />
+<img width="1898" height="899" alt="Screenshot 2026-05-24 165818" src="https://github.com/user-attachments/assets/bffc9ec5-8c13-4a50-9e4e-4d9eece3f6ea" />
+<img width="1901" height="904" alt="Screenshot 2026-05-24 165753" src="https://github.com/user-attachments/assets/54c2df35-963e-4d0d-8b9b-105867d19119" />
 
+---
 
