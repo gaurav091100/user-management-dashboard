@@ -92,7 +92,7 @@ npm run preview
 
 ## Screenshots
 
-### <img width="25" height="25" alt="9224277" src="https://github.com/user-attachments/assets/e11f10f4-cfdf-42b4-a9cc-8269b2760350" /> Mobile Screen and Dark Mode
+### <img width="20" height="20" alt="9224277" src="https://github.com/user-attachments/assets/e11f10f4-cfdf-42b4-a9cc-8269b2760350" /> Mobile Screen and Dark Mode
 
 ---
 <img width="440" height="794" alt="Screenshot 2026-05-24 170105" src="https://github.com/user-attachments/assets/6dca0f17-78dc-4469-82f1-95c30ca7cd06" />
@@ -100,7 +100,7 @@ npm run preview
 <img width="434" height="797" alt="Screenshot 2026-05-24 170030" src="https://github.com/user-attachments/assets/4ed7c592-8f4c-48dc-b979-a0e0f5f446f9" />
 <img width="437" height="802" alt="Screenshot 2026-05-24 170012" src="https://github.com/user-attachments/assets/4648a1b0-6fc1-4e24-a831-a87b21ee5038" />
 
-### Dekstop Screen and Light Mode
+### <img width="20" height="20" alt="3553947" src="https://github.com/user-attachments/assets/f168de7d-b6ef-46c8-9fd7-7489ec6c85a3" /> Dekstop Screen and Light Mode
 
 ---
 <img width="1596" height="904" alt="Screenshot 2026-05-24 170145" src="https://github.com/user-attachments/assets/e9324eff-ac03-454d-8bf2-68eec8e35b42" />
