@@ -1,3 +1,5 @@
+<img width="1898" height="899" alt="Screenshot 2026-05-24 165818" src="https://github.com/user-attachments/assets/bffc9ec5-8c13-4a50-9e4e-4d9eece3f6ea" />
+<img width="1901" height="904" alt="Screenshot 2026-05-24 165753" src="https://github.com/user-attachments/assets/54c2df35-963e-4d0d-8b9b-105867d19119" />
 # User Management Dashboard
 
 ![React](https://img.shields.io/badge/React-19.2-61DAFB?logo=react&logoColor=white)
@@ -87,4 +89,10 @@ npm run preview
 - [ ] React Query or SWR for caching, deduplication, and background refetch
 - [ ] Accessibility audit (ARIA labels, focus trap in modals, keyboard nav)
 - [ ] Optimistic updates and rollback on failed mutations
+
+---
+
+## Screenshots
+
+
 
