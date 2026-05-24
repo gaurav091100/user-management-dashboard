@@ -92,7 +92,7 @@ npm run preview
 
 ## Screenshots
 
-### Mobile Screen and Dark Mode
+### <img width="25" height="25" alt="9224277" src="https://github.com/user-attachments/assets/e11f10f4-cfdf-42b4-a9cc-8269b2760350" /> Mobile Screen and Dark Mode
 
 ---
 <img width="440" height="794" alt="Screenshot 2026-05-24 170105" src="https://github.com/user-attachments/assets/6dca0f17-78dc-4469-82f1-95c30ca7cd06" />
